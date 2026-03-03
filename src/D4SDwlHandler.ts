@@ -1,17 +1,11 @@
-import { JSDOM } from "jsdom";
-
 export class D4SDwlHandler {
   cookies: string = "";
   bookId: string = "";
-  bookIndex: string = "";
   bookSize: number[] = [];
   bookName: string = "";
+  ebookBaseUrl: string = ""; // e.g. https://a.digi4school.at/ebook/3643/
 
-  isDoneDownloading: boolean = false;
-
-  dwlSvgs: JSDOM[] = [];
   page: number = 1;
-  pdfMergeNames: string[] = [];
 
   isNewVersion: boolean = false;
 }
