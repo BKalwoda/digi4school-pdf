@@ -24,7 +24,7 @@ export class D4SLog {
   }
 
   static generatingPage(page: number) {
-    console.log("     Generating page " + page + "...");
+    console.log("Generating page " + page + "...");
   }
 
   static mergingPdfs() {
