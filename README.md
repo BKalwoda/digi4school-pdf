@@ -2,7 +2,7 @@
 
 Download your digi4school (and compatible) ebooks as PDF files using your own login credentials.
 
-> **Disclaimer:** This project is for personal, educational use only. Downloading and/or redistributing the generated PDF files may violate the terms of service of the respective platform and applicable copyright law.
+> **Disclaimer:** This project is for personal use only. Downloading and/or redistributing the generated PDF files may violate the terms of service of the respective platform and applicable copyright law.
 
 ---
 
@@ -32,7 +32,7 @@ npm start
 You will be prompted for:
 
 ```
-Paste the URL of your book: https://digi4school.at/ebook/22s58pqggqdc
+Paste the URL of your book: https://digi4school.at/ebook/22s58xxxxxxx
 Username/Email: mail@example.com
 Password: ••••••••
 Pages to download (e.g. 5-20, leave empty for whole book):
@@ -52,7 +52,7 @@ The generated PDF is saved in the `book/` subdirectory.
 2. Click on the book you want to download — it will open in the ebook reader.
 3. Copy the URL from your browser's address bar **before** the redirect happens, or simply look it up in your **browser history** right after opening the book. It looks like:
    ```
-   https://digi4school.at/ebook/22s58pqggqdc
+   https://digi4school.at/ebook/22s58xxxxxxx
    ```
 4. Paste that URL when the script prompts you.
 
@@ -62,7 +62,7 @@ The script automatically handles the login and redirect flow to find the actual 
 
 ## Fork & Changes
 
-This repository is a fork of the original [digi4school-pdf](https://github.com/original-author/digi4school-pdf) project, which had not been maintained since around 2020–2021 and no longer worked with modern Node.js versions or the current digi4school platform.
+This repository is a fork of the original [digi4school-pdf](https://github.com/laurensk/digi4school-pdf) project, which had not been maintained since around 2021 and no longer worked with modern Node.js versions or the current digi4school platform.
 
 ### What was changed
 
@@ -95,35 +95,3 @@ The generated PDFs are not searchable and text cannot be copied. Since every pag
 3. Handle `<tspan dx/dy>` relative offsets (common for multi-line paragraphs).
 4. In the pdf-lib pass, call `page.drawText(content, { x, y: pageH - y, size, opacity: 0 })` for each text item — flip Y because PDF origin is bottom-left, SVG is top-left.
 5. Skip nodes with `display:none` or `visibility:hidden`.
-# digi4school-pdf
-
-Welcome to digi4school-pdf!
-This script lets you download your books from digi4school.
-
-## Requirements
-
-1. [Node.JS & NPM](https://nodejs.org/en/) (test with `node --version` and `npm --version`)
-2. [Java 8+](https://www.java.com/en/download/) (test with `java --version`)
-
-## Installation
-
-1. Clone this repository using HTTPS or Git.
-2. Run `npm install` in the root directory of the project.
-
-## Usage
-
-To download a book, open a new terminal window in the root directory of the project and execute the script by typing `npm start`.
-Now, you have to provide the URL of the book to download as well as your login credentials for digi4school.
-
-```
-Paste the URL of your book: https://a.digi4school.at/ebook/0000/
-Username/Email: mail@example.com
-Password: ********
-```
-
-You can see the progress of the download in the console and when the PDF-file has been generated, you can use a file explorer to navigate to the subdirectory book/ to find your generated PDF-file.
-
-## Disclaimer
-
-This project is for educational purposes only and it's illegal to download and/or use the generated PDF-files.
-
